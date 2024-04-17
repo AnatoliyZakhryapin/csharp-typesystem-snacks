@@ -376,6 +376,35 @@ namespace csharp_typesystem_snacks
                     Console.WriteLine($"Numero {i + 1}° è: {inputNumbers[i]}");
                 }
             }
+
+            // -------
+            // Snack 8
+            // -------
+
+            {
+                Console.WriteLine("Snack8");
+
+                // Creiamo un array di numeri interi da 1 a 100
+                int[] numbers = new int[100];
+
+                // Popoliamo l'array con i numeri da 1 a 100
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    numbers[i] = i + 1;
+                }
+
+                // Variabile per memorizzare la somma degli elementi in posizione dispari
+                int sumNumberWithOddPosition = 0;
+
+                // Cicliamo array e sommiamo gli elementi in posizione dispari
+                for (int i = 1; i < numbers.Length; i += 2)
+                {
+                    sumNumberWithOddPosition += numbers[i];
+                }
+
+                // Stampiamo la somma
+                Console.WriteLine($"La somma dei numeri con posizione dispari è: {sumNumberWithOddPosition}");
+            }
         }
     }
 }
