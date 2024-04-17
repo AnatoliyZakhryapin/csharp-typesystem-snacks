@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace csharp_typesystem_snacks
@@ -51,7 +52,7 @@ namespace csharp_typesystem_snacks
                     // Proviamo ad assegnare a number1 il valore del userInput, se viene eseguito assegnazione - si esce dal ciclo tramite break.
                     try
                     {
-                        //number2 = int.Parse(userInput);
+                        // number2 = int.Parse(userInput);
                         number2 = Convert.ToInt32(userInput);
                         break;
                     }
@@ -404,6 +405,52 @@ namespace csharp_typesystem_snacks
 
                 // Stampiamo la somma
                 Console.WriteLine($"La somma dei numeri con posizione dispari è: {sumNumberWithOddPosition}");
+            }
+
+            // -------
+            // Snack 9
+            // -------
+
+            {
+                Console.WriteLine("Snack9");
+
+                // Creiamo le variabile
+                int[] numbers = new int[0];
+                int sum = 0;
+                int number;
+
+                // Continua a chiedere i numeri all'utente e inserirli nell'array finché la somma degli elementi è minore di 50
+                while (sum < 50)
+                {
+                    // Chiediamo inserire un numero al utente
+                    Console.WriteLine("Inserisci il secondo numero:");
+
+                    // Salviamo input 
+                    string userInput = Console.ReadLine();
+
+                    try
+                    {
+                        number = Convert.ToInt32(userInput);
+
+                        // Estendiamo l'array e aggiungiamo il numero inserito
+                        Array.Resize(ref numbers, numbers.Length + 1);
+                        numbers[numbers.Length - 1] = number;
+
+                        // Aggiorniamo la somma degli elementi nell'array
+                        sum = numbers.Sum();
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Errore di formato. Inserisci un numero valido, NON puo contenere le lettere o simboli!.");
+                    }
+                }
+
+                // Stampiamo che la somma e maggiore di 50
+                if (sum > 50)
+                {
+                    Console.WriteLine("La somma è piu grande di 50");
+                    Console.WriteLine($"La somma del array è: {sum}");
+                }
             }
         }
     }
