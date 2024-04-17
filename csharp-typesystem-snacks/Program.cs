@@ -219,6 +219,54 @@ namespace csharp_typesystem_snacks
                 Console.WriteLine($"La somma dei numeri da 2 a 10 é: {sum}");
                 Console.WriteLine($"La media dei numeri da 2 a 10 é: {average}");
             }
+
+            // -------
+            // Snack 5
+            // -------
+
+            {
+                // Creamo la variabile number
+                int number;
+
+                // Facciamo il ciclo finche l'utente non inserisce un numero
+                while (true)
+                {
+                    // Chiediamo inserire un numero al utente
+                    Console.WriteLine("Inserisci un numero:");
+
+                    // Salviamo input 
+                    string userInput = Console.ReadLine();
+
+                    // Proviamo ad assegnare a number il valore del userInput, se viene eseguito assegnazione - si esce dal ciclo tramite break.
+                    try
+                    {
+                        number = Convert.ToInt32(userInput);
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Errore di formato. Inserisci un numero valido, NON puo contenere le lettere o simboli!.");
+                    }
+                }
+
+                // Controlliamo se il numero e pari
+                bool isOdd = number % 2 == 0 ? true : false;
+
+                // Stampiamo la risposta
+                switch (isOdd)
+                {
+                    // Se numero e pari
+                    case true:
+                        Console.WriteLine("Number è pari!");
+                        Console.WriteLine($"Il valore del Number è: {number}");
+                        break;
+                    // Se numero e dispari
+                    case false:
+                        Console.WriteLine("Number è dispari!");
+                        Console.WriteLine($"Il valore succesivo del Number è: {number + 1}");
+                        break;
+                }
+            }
         }
     }
 }
