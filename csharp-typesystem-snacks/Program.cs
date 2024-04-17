@@ -302,6 +302,9 @@ namespace csharp_typesystem_snacks
                     // Salviamo input 
                     string userInput = Console.ReadLine();
 
+                    // Convertiamo il nome dell'utente in minuscolo per uniformità
+                    userInput = userInput.ToLower();
+
                     // Verifichiamo se la stringa non è vuota e contiene non contiene i numeri
                     if (!string.IsNullOrEmpty(userInput) && userInput.All(char.IsLetter))
                     {
@@ -313,6 +316,9 @@ namespace csharp_typesystem_snacks
                         Console.WriteLine("Errore. Inserisci il nome valido (senza numeri o simboli). La parola deve contenere almeno una lettera.");
                     }
                 }
+
+                // Convertiamo i nomi dei partecipanti in minuscolo per uniformità
+                participants = Array.ConvertAll(participants, p => p.ToLower());
 
                 // Controlliamo se puo partecipare
                 bool isCanPartecipate = participants.Contains(userName);
