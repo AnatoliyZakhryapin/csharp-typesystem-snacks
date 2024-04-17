@@ -452,6 +452,45 @@ namespace csharp_typesystem_snacks
                     Console.WriteLine($"La somma del array è: {sum}");
                 }
             }
+
+            // -------
+            // Snack 10
+            // -------
+
+            {
+                Console.WriteLine("Snack10");
+
+
+                // Chiediamo di inserire un numero all'utente
+                Console.WriteLine("Inserisci un numero:");
+
+                // Salviamo il numero inserito dall'utente come un int
+                int N = int.Parse(Console.ReadLine());
+
+                // Se il numero inserito è negativo, ne calcoliamo il valore assoluto
+                N = Math.Abs(N);
+
+                // Creamo una istanza del Random
+                Random randomNumber = new Random();
+
+                // Facciamo ciclo per creare N quantita dei array
+                for (int i = 1; i <= N; i++)
+                {
+                    // Creamo array
+                    int[] array = new int[10];
+
+                    // Stampiamo il numero del Array creato
+                    Console.WriteLine($"Array {i}:");
+
+                    // Andiamo cambiare i valori dei numeri del nostro array con i numeri random da 1 a 100
+                    for (int j = 0; j < array.Length; j++)
+                    {
+                        array[j] = randomNumber.Next(1, 101);
+                        Console.Write(array[j] + " ");
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
