@@ -1,4 +1,6 @@
-﻿namespace csharp_typesystem_snacks
+﻿using System;
+
+namespace csharp_typesystem_snacks
 {
     internal class Program
     {
@@ -190,6 +192,32 @@
 
                 // Stampiamo la somma 
                 Console.WriteLine($"La somma di tutti numeri è: {sum}");
+            }
+
+            // -------
+            // Snack 4
+            // -------
+
+            {
+                // Creamo le variabili 
+                int sum = 0;
+                int count = 0;
+                double average;
+
+                // Facciamo il ciclo da 2 a 10 per calcolare sum e aggiornare count
+                for (int i = 2; i <= 10; i++)
+                {
+                    // Aggiorniamo la variabile sum
+                    sum += i;
+
+                    // Aggiorniamo il count
+                    count++;
+                }
+
+                average = sum / count;
+
+                Console.WriteLine($"La somma dei numeri da 2 a 10 é: {sum}");
+                Console.WriteLine($"La media dei numeri da 2 a 10 é: {average}");
             }
         }
     }
