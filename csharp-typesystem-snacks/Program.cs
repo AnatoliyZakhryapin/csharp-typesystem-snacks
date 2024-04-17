@@ -277,6 +277,54 @@ namespace csharp_typesystem_snacks
                         break;
                 }
             }
+
+            // -------
+            // Snack 6
+            // -------
+
+            {
+                Console.WriteLine("Snack 6");
+
+                // Creamo array dei partecipanti
+                string[] participants = { "Anatoliy", "Federico", "Andrea", "Matteo" };
+
+                // Creamo la variabile userName
+                string userName;
+
+                // Recuperiamo il nome dell'uttente, si fa il ciclo finche utente non da un nome adeguato (non deve essere i numeri o vuoto)
+                while (true)
+                {
+                    // Chiediamo inserire il nome all'utente
+                    Console.WriteLine("Inserisci il tuo nome:");
+
+                    // Salviamo input 
+                    string userInput = Console.ReadLine();
+
+                    // Verifichiamo se la stringa non è vuota e contiene non contiene i numeri
+                    if (!string.IsNullOrEmpty(userInput) && userInput.All(char.IsLetter))
+                    {
+                        userName = userInput;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Errore. Inserisci il nome valido (senza numeri o simboli). La parola deve contenere almeno una lettera.");
+                    }
+                }
+
+                // Controlliamo se puo partecipare
+                bool isCanPartecipate = participants.Contains(userName);
+
+                // Se è presente nella lista diamo il Benvenuto
+                if (isCanPartecipate)
+                {
+                    Console.WriteLine("Benvenuto alla festa!!!");
+                }
+                else
+                {
+                    Console.WriteLine("Ci dispiace ma non sei presente nella lista dei partecipanti");
+                }
+            }
         }
     }
 }
