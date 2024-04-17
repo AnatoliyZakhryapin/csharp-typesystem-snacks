@@ -146,6 +146,51 @@
                 Console.WriteLine($"La parola piu corta è {wordShorter}");
                 Console.WriteLine($"La parola piu lunga è {wordLonger}");
             }
+
+            // -------
+            // Snack 3
+            // -------
+
+            {
+                // Creamo la variabile index per gestire il ciclo while
+                int index = 0;
+
+                // Creamo il nostro array con 10 numeri di defaul = 0;
+                int[] inputNumbers = new int[10];
+
+                // Facciamo ciclo perassegnare i valori del input a nostro array inputNumbers
+                while (index < 10)
+                {
+                    // Chiediamo inserire un numero al utente
+                    Console.WriteLine($"Inserisci il numero {index + 1}:");
+
+                    // Salviamo il valore del input
+                    string userInput = Console.ReadLine();
+
+                    // Creamo la variabile number che servira per assegnare il valore del input al inputNumbers
+                    int number;
+
+                    // Se il valore del input e un numero la condizione restituisce true e number prendera il valore del userUnput
+                    if (int.TryParse(userInput, out number))
+                    {
+                        // Aggiornuamo il valore del inputNumbers
+                        inputNumbers[index] = number;
+
+                        // Aumentiamo il nostro indice
+                        index++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input non valido. Inserisci un numero valido.");
+                    };
+                };
+
+                // Calcoliamo la somma dei numeri
+                int sum = inputNumbers.Sum();
+
+                // Stampiamo la somma 
+                Console.WriteLine($"La somma di tutti numeri è: {sum}");
+            }
         }
     }
 }
