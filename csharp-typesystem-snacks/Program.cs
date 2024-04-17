@@ -11,6 +11,8 @@ namespace csharp_typesystem_snacks
             // -------
 
             {
+                Console.WriteLine("Snack 1");
+
                 int number1 = 0;
                 int number2 = 0;
 
@@ -93,6 +95,8 @@ namespace csharp_typesystem_snacks
             // -------
 
             {
+                Console.WriteLine("Snack 2");
+
                 string word1, word2;
 
                 // Recuperiamo la prima parola, si fa il ciclo finche non riusciamo assegnare a word1 il valore correto.
@@ -154,6 +158,8 @@ namespace csharp_typesystem_snacks
             // -------
 
             {
+                Console.WriteLine("Snack 3");
+
                 // Creamo la variabile index per gestire il ciclo while
                 int index = 0;
 
@@ -199,6 +205,8 @@ namespace csharp_typesystem_snacks
             // -------
 
             {
+                Console.WriteLine("Snack 4");
+
                 // Creamo le variabili 
                 int sum = 0;
                 int count = 0;
@@ -225,6 +233,8 @@ namespace csharp_typesystem_snacks
             // -------
 
             {
+                Console.WriteLine("Snack 5");
+
                 // Creamo la variabile number
                 int number;
 
