@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace csharp_typesystem_snacks
 {
@@ -323,6 +324,56 @@ namespace csharp_typesystem_snacks
                 else
                 {
                     Console.WriteLine("Ci dispiace ma non sei presente nella lista dei partecipanti");
+                }
+            }
+
+            // -------
+            // Snack 7
+            // -------
+
+            {
+                Console.WriteLine("Snack7");
+
+                // Creamo la variabile index per gestire il ciclo while
+                int index = 0;
+
+                // Creamo il nostro array
+                string[] inputNumbers = new string[6];
+
+                // Facciamo ciclo per assegnare i valori del input a nostro array inputNumbers
+                while (index < 6)
+                {
+                    // Chiediamo inserire un numero al utente
+                    Console.WriteLine($"Inserisci il numero {index + 1}° :");
+
+                    // Salviamo il valore del input
+                    string userInput = Console.ReadLine();
+
+                    // Creamo la variabile number che servira per assegnare il valore del input al inputNumbers
+                    int number;
+
+                    // Se il valore del input e un numero la condizione restituisce true e number prendera il valore del userUnput
+                    if (int.TryParse(userInput, out number))
+                    {
+                        // Aggiornuamo il valore del inputNumbers solo se e dispari
+                        if (number % 2 != 0)
+                        {
+                            inputNumbers[index] = userInput;
+                        }
+
+                        // Aumentiamo il nostro indice
+                        index++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input non valido. Inserisci un numero valido.");
+                    }
+                };
+
+                // Stampiamo il nostro array inputNumbers
+                for (int i = 0; i < inputNumbers.Length; i++)
+                {
+                    Console.WriteLine($"Numero {i + 1}° è: {inputNumbers[i]}");
                 }
             }
         }
